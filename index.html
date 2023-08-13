@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendar App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Centering styles */
+        html{
+          font-size:10px;
+        }
+
+        body{
+          font-size:1.6rem;
+          line-height: 1.5;
+          text-align:center;
+          margin: 0;
+          background-color:#c2d4f2;
+        }
+        
+        /* Calendar styling */
+        .calendar-container {
+            text-align: center;
+            margin-top: 20px; /* Add some spacing between header and calendar */
+        }
+        
+        .calendar {
+            border-collapse: collapse;
+            width: 400px;
+            margin: 10px auto; /* Center horizontally */
+        }
+        
+        .calendar th, .calendar td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        /* Header styling */
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Supper Club Calendar
+    </div>
+    <div class="calendar-container">
+        {{range $year := .Years}}
+            {{range $month := $year}}
+                {{$month}}
+            {{end}}
+        {{end}}
+    </div>
+</body>
+</html>
